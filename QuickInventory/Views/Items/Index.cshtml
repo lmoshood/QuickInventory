@@ -1,0 +1,22 @@
+﻿@model QuickInventory.ViewModels.ItemViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Customers</h1>
+@if (Model.Items.Count == 0)
+{
+    <h1>We don't have any customers yet</h1>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        @foreach (var item in Model.Items)
+        {
+            <tr>
+                <th>@item.Name</th>
+            </tr>
+        }
+    </table>
+}

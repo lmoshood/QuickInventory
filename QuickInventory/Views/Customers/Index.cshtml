@@ -1,0 +1,30 @@
+﻿@model IEnumerable<QuickInventory.Models.Customer>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Customers</h1>
+@if(Model == null)
+{
+    <h1>We don't have any customers yet</h1>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+    <tr>
+        <th>Customer</th>
+        <th>Discount Rate</th>
+
+    </tr>
+    @foreach(var customer in Model)
+    {
+        <tr>
+            <td>@Html.ActionLink((string)@customer.Name, "Details", "Customers", new { id = customer.Id }, null)</td>
+            <td>@customer.MemberType.DiscountRate%</td>
+        </tr>
+    }
+</table>
+}
+
+

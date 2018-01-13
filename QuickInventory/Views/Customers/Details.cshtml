@@ -1,0 +1,16 @@
+﻿@model QuickInventory.Models.Customer
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Name</h2>
+<ul>
+    <li>Membership Type: @Model.MemberType</li>
+    @if(Model.BirthDate != null)
+    {
+        <li>!@Model.BirthDate</li>
+    }
+    <li></li>
+</ul>
+
